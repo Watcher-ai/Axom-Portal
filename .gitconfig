@@ -1,0 +1,6 @@
+[user]
+    name = VisheshJha
+    email = jha.vishesh@gmail.com
+
+[credential]
+    helper = cache
