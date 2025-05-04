@@ -1,0 +1,36 @@
+.main-container {
+    padding: 20px;
+    --bg-color: #362d59; /* Default background color */
+    background-color: var(--bg-color);
+    color: white;
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: left;
+        position: relative;
+        left: 15%;
+        width: 70%;
+
+        .image-container {
+            background: linear-gradient(120deg, #c83852, #b44092 25%, #6a5fc1 50%);
+            background-size: 200%; /* Make the gradient larger than the button */
+            border-radius: 0.5rem; /* Optional: Add rounded corners to the container */
+            padding: 0.5rem; /* Add padding inside the container */
+            box-sizing: border-box; /* Ensure padding is included in the width */
+            width: 100%;
+        
+            .feature-image {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+      }
+}
+
+
+
+

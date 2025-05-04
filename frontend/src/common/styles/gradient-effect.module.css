@@ -1,0 +1,25 @@
+.gradient-background {
+    position: relative;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    /* background: #362d59;  Default background */
+    border: 0.1rem solid white; /* Default border color */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    /* background: linear-gradient(120deg, #c83852, #b44092 25%, #6a5fc1 50%); */
+    background: linear-gradient(120deg, #c83852, #b44092 25%, var(--gradient-last-color) 50%);
+    background-size: 200%; /* Make the gradient larger than the button */
+    background-position: 100% 0; /* Start position of the gradient */
+    transition: background 0.5s ease;
+    --gradient-last-color: #6a5fc1; /* Last color of the gradient */
+  }
+  
+  .gradient-background:hover {
+    /* Gradient background on hover */
+    background-position: 0 0;
+    border-width: 0rem; /* Remove the border on hover */
+  }
