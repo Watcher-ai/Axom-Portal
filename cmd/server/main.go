@@ -9,6 +9,7 @@ import (
 	"portal/internal/db"
 	"portal/internal/models"
 	"portal/internal/util"
+	"portal/cmd/server/controllers"
 
 	"google.golang.org/api/idtoken"
 
@@ -91,6 +92,13 @@ func main() {
 		// TODO: Lookup user/admin by email and role in DB
 		c.JSON(http.StatusOK, gin.H{"username": email, "role": req.Role})
 	})
+
+	// API routes
+	api := r.Group("/api/v1")
+	{
+		api.GET("/filter-types", controllers.GetFilterTypes) // Get filter types
+		api.POST("/agents", controllers.AddAgent)           // Add an agent
+	}
 
 	r.Run(":8080")
 }

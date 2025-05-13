@@ -46,7 +46,16 @@ const NavLink = styled.a<{ color: string }>`
   }
 `;
 
-const Header: React.FC = () => {
+const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+  <>
+    <HeaderContent/>
+    {children}
+  </>
+  )
+}
+
+const HeaderContent: React.FC = () => {
   const { colors } = useTheme();
 
   return (
