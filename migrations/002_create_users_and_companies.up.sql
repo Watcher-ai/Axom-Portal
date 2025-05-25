@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS companies (
+    id UUID PRIMARY KEY,
+    name TEXT UNIQUE NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id UUID PRIMARY KEY,
+    company_id UUID REFERENCES companies(id) ON DELETE CASCADE,
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    role TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW()
+); 
