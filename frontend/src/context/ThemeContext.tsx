@@ -12,6 +12,7 @@ const defaultColors: ThemeColors = {
   text: '#ffffff',
   contrastA500: '#ffffff',
   contrastA600: '#ffffff',
+  input: '#fff',
 };
 
 const ThemeContext = createContext<ThemeContextType>({
@@ -30,6 +31,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     text: '#FFFFFF',
     contrastA500: '#ffffff',
     contrastA600: '#ffffff',
+    input: '#232136',
   };
 
   const theme: ThemeContextType = {

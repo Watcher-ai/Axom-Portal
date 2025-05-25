@@ -46,34 +46,28 @@ const NavLink = styled.a<{ color: string }>`
   }
 `;
 
-const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-  <>
-    <HeaderContent/>
-    {children}
-  </>
-  )
-}
+const Header: React.FC = () => {
+  return <HeaderContent />;
+};
 
 const HeaderContent: React.FC = () => {
   const { colors } = useTheme();
 
   return (
     <HeaderContainer colors={colors}>
-      <Logo color={colors.text}>YourLogo</Logo>
+      <Logo color={colors.text}>Watcher.AI</Logo>
       <Nav>
-        {['Product', 'Solutions', 'Pricing', 'Docs'].map((item) => (
-          <NavLink 
-            key={item}
-            color={colors.text} 
-            href={`#${item.toLowerCase()}`}
-          >
-            {item}
-          </NavLink>
-        ))}
+        <a href="/login" style={{ textDecoration: 'none' }}>
+          <ButtonPrimary style={{ padding: '8px 18px' }}>Login</ButtonPrimary>
+        </a>
+        <a href="/register" style={{ textDecoration: 'none' }}>
+          <ButtonPrimary style={{ padding: '8px 18px' }}>Register</ButtonPrimary>
+        </a>
+        <a href="/register" style={{ textDecoration: 'none' }}>
           <ButtonPrimary>
-            <span style={{ textTransform: 'uppercase' }}>Get Started</span>
-        </ButtonPrimary>
+            <span style={{ textTransform: 'uppercase' }}>Start Free Trial</span>
+          </ButtonPrimary>
+        </a>
       </Nav>
     </HeaderContainer>
   );

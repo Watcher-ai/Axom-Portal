@@ -5,6 +5,7 @@ export interface ThemeColors {
     text: string;
     contrastA500: string;
     contrastA600: string;
+    input: string;
   }
   
   export interface Theme {

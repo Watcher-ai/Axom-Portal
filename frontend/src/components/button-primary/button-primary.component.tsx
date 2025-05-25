@@ -1,19 +1,21 @@
 import React from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
 import styles from './../../common/styles/gradient-effect.module.css';
 import { useTheme } from './../../context/ThemeContext';
 
-type ButtonPrimaryProps = HTMLMotionProps<'button'>;
-const ButtonPrimary: React.FC<ButtonPrimaryProps> = (props) => {
-      const { colors } = useTheme();
+interface ButtonPrimaryProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  icon?: React.ReactElement;
+}
+const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({ icon, children, ...props }) => {
+  const { colors } = useTheme();
   return (
-    <motion.button
+    <button
       {...props}
       className={styles['gradient-background']}
-      style={{ '--gradient-last-color': colors.secondary } as React.CSSProperties}
+      style={{ '--gradient-last-color': colors.secondary, ...props.style } as React.CSSProperties}
     >
-      {props.children}
-    </motion.button>
+      {icon && <span style={{ marginRight: 8, display: 'inline-flex', alignItems: 'center' }}>{icon}</span>}
+      {children}
+    </button>
   );
 };
 
